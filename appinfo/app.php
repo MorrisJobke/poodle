@@ -12,12 +12,16 @@
 namespace OCA\Poodle\AppInfo;
 
 use OCP\AppFramework\App;
+use OCP\IL10N;
+use OCP\IURLGenerator;
 
 $app = new App('poodle');
 $container = $app->getContainer();
 
 $container->query('OCP\INavigationManager')->add(function () use ($container) {
+	/** @var IURLGenerator $urlGenerator */
 	$urlGenerator = $container->query('OCP\IURLGenerator');
+	/** @var IL10N $l10n */
 	$l10n = $container->query('OCP\IL10N');
 	return [
 		// the string under which your app will be referenced in owncloud

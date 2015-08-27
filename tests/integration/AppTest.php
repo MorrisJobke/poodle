@@ -20,6 +20,7 @@ use Test\TestCase;
  */
 class AppTest extends TestCase {
 
+    /** @var  \OCP\AppFramework\IAppContainer */
     private $container;
 
     public function setUp() {

@@ -18,10 +18,12 @@ use OCP\AppFramework\Http\TemplateResponse;
 
 class PageControllerTest extends PHPUnit_Framework_TestCase {
 
+	/** @var  PageController */
 	private $controller;
 	private $userId = 'john';
 
 	public function setUp() {
+		/** @var \OCP\IRequest $request */
 		$request = $this->getMockBuilder('OCP\IRequest')->getMock();
 
 		$this->controller = new PageController(
