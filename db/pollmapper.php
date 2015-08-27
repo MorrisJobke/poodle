@@ -22,4 +22,9 @@ class PollMapper extends Mapper {
 		parent::__construct($db, 'poodle_polls', get_class(new Poll()));
 	}
 
+	public function findAllByUser($userId) {
+		$sql = 'SELECT * FROM `' . $this->tableName . '` WHERE `user_id` = ?;';
+		return $this->findEntities($sql, [$userId]);
+	}
+
 }

@@ -11,21 +11,42 @@
 (function ($, OC) {
 
 	$(document).ready(function () {
-		$('#hello').click(function () {
-			alert('Hello from your script file');
+
+
+		var templatePoll = Handlebars.compile($("#poll-template").html());
+		var pollsUrl = OC.generateUrl('/apps/poodle/polls');
+
+		$.get(pollsUrl).success(function (polls) {
+			$('#app-navigation').find('ul')
+				.append(
+				templatePoll(polls)
+			);
 		});
 
-		$('#echo').click(function () {
-			var url = OC.generateUrl('/apps/poodle/echo');
-			var data = {
-				echo: $('#echo-content').val()
-			};
+		$('#add-poll').click(function () {
+			$.post(
+				pollsUrl,
+				{
+					'name': $('#new-poll-name').val()
+				}
+			).success(function (poll) {
 
-			$.post(url, data).success(function (response) {
-				$('#echo-result').text(response.echo);
+				$('#app-navigation').find('ul')
+					.append(
+						templatePoll([poll])
+					);
+				$('#new-poll-name').val('');
+
+			}).error(function () {
+
+				console.log('Something bad happened');
+
 			});
-
 		});
+
+
+
+
 	});
 
 })(jQuery, OC);

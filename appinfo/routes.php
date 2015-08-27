@@ -18,8 +18,10 @@
  * it's instantiated in there
  */
 return [
-    'routes' => [
-	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
-	   ['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
-    ]
+	'routes' => [
+		['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
+		['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
+		['name' => 'poll#get', 'url' => '/polls', 'verb' => 'GET'],
+		['name' => 'poll#add', 'url' => '/polls', 'verb' => 'POST'],
+	]
 ];

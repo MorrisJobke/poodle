@@ -1,10 +1,5 @@
-<p>Hello World <?php p($_['user']) ?></p>
-
-<p><button id="hello">click me</button></p>
-
-<p><textarea id="echo-content">
-	Send this as ajax
-</textarea></p>
-<p><button id="echo">Send ajax request</button></p>
-
-Ajax response: <div id="echo-result"></div>
+<div id="emptycontent" class="">
+	<div class="icon-poll-list"></div>
+	<h2><?php p($l->t('No poll selected')); ?></h2>
+	<p><?php p($l->t('Select a poll to edit choices and view votes!')); ?></p>
+</div>

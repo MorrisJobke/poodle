@@ -26,4 +26,11 @@ class Poll extends Entity {
 	protected $name;
 	protected $userId;
 
+	public function toArray() {
+		return [
+			'id' => $this->id,
+			'name' => $this->name,
+			'userId' => $this->userId
+		];
+	}
 }
