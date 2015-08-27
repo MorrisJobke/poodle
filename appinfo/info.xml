@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<info>
+    <id>poodle</id>
+    <name>Poodle</name>
+    <description>My first ownCloud app</description>
+    <licence>AGPL</licence>
+    <author>Morris Jobke</author>
+    <version>0.1</version>
+    <namespace>Poodle</namespace>
+    <category>productivity</category>
+    <dependencies>
+        <owncloud min-version="8.1" />
+    </dependencies>
+</info>
